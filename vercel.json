@@ -1,0 +1,23 @@
+{ 
+    "version": 2, 
+    "outputDirectory": "dist",
+    "env": {
+      "PORT": "4000"
+    },
+    "builds": [
+      {
+        "src": "dist/index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/dist"
+      },
+      {
+        "source": "/get",
+        "destination": "/dist"
+      }
+  ]
+}
